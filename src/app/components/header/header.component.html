@@ -1,0 +1,219 @@
+<header 
+    [ngClass]="{
+        'scolling-up slideInDown _delay3ms': scrollingUp, 
+        'scrolling-down': !scrollingUp, 
+        'at-the-top': scrollingposition <= 150
+    }">
+
+
+    <div class="nira-logo">
+        <img src="./assets/exports/nira_logo_black@2x.png" />
+    </div>
+
+    <section class="top-header">
+
+        <div class="location">
+            <mat-icon>location_on</mat-icon>
+
+            <p>Kololo Airstrip (Independence Grounds)</p>
+        </div>
+
+        <div class="contact-info">
+                
+            <a mat-button href="tel:0800211700">
+                <div class="btn-label">
+                    <mat-icon>phone</mat-icon>
+                    <span>0800 211 700</span>                    
+                </div>
+            </a>
+
+            <a mat-button href="#">
+                <img src="./assets/exports/facebook.png" alt="">
+            </a>
+
+            <a mat-button href="https://twitter.com/NIRA_Ug" target="_blank">
+                <img src="./assets/exports/twitter.png" alt="">
+            </a>            
+
+        </div>
+
+    </section>
+
+    <ul class="main-menu">
+        <li>
+            <button
+                mat-button
+                routerLink="/home" 
+                title="Home"
+                (click)="onGoToTop()"
+                routerLinkActive="active-route">
+                    Home
+            </button>            
+        </li>
+        
+        <li class="services-and-forms-li">
+            <button
+                mat-button
+                [ngClass]="{'active-route': activeDropdown === 'services-and-forms'}"                
+                routerLinkActive="active-route">
+                    <div class="btn-label">
+                        <span>Services & Forms</span>
+                        <mat-icon>arrow_drop_down</mat-icon>
+                    </div>
+            </button>      
+            
+            <section class="dropdown-menu fadeInUp _delay5ms">
+
+                <nav class="nav-grid-view">
+                    <div class="menu-item">
+                        <h3>Registration of Persons</h3>
+    
+                        <ul>          
+                            <li>
+                                <button 
+                                    mat-button
+                                    matTooltip="Fill in this form online."
+                                    routerLink="/services-and-forms/registration-of-persons-form-3" 
+                                    routerLinkActive="active-route"
+                                    (click)="onGoToTop('services-and-forms')">
+                                    <div class="btn-label">
+                                        <mat-icon class="online">edit</mat-icon>
+                                        <h4>Form 3</h4>
+                                        <span>Registration of persons</span>
+                                    </div>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button mat-button>
+                                    <a href="{{ baseURL }}/2021/05/FORM1-Notification-of-change-error-in-information-in-the-register2.pdf"
+                                        target="_blank"
+                                        matTooltip="Download the form"
+                                        download="Form 1: Notification of Change / Error in Information in the Register">
+                                        <mat-icon>cloud_download</mat-icon>
+                                        <h4>Form 1</h4>
+                                        <span>Notification of Change / Error in Information in the Register</span>
+                                    </a>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="menu-item">
+                        <h3>Births</h3>
+    
+                        <ul>
+                            <li>
+                                <button 
+                                    mat-button
+                                    matTooltip="Fill in this form online."
+                                    routerLink="/services-and-forms/births-form-3" 
+                                    routerLinkActive="active-route"
+                                    (click)="onGoToTop('services-and-forms')">
+                                    <div class="btn-label">
+                                        <mat-icon class="online">edit</mat-icon>
+                                        <h4>Form 3</h4>
+                                        <span>Notice of Birth of a Child</span>
+                                    </div>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button mat-button>
+                                    <a href="{{ baseURL }}/2021/05/Form-6-Application-to-the-Change-a-Name-of-Child-3.pdf"
+                                        target="_blank"
+                                        matTooltip="Download the form"
+                                        download="Form 6: Application To The Change A Name Of Child">
+                                        <mat-icon>cloud_download</mat-icon>
+                                        <h4>Form 6</h4>
+                                        <span>Application To The Change A Name Of Child</span>
+                                        </a>   
+                                </button>
+                            </li>
+
+                        </ul>
+                    </div>
+    
+                    <div class="menu-item">
+                        <h3>Deaths</h3>
+    
+                        <ul>
+                            <li>
+                                <button mat-button>
+                                    <a href="{{ baseURL }}/2021/05/Form-11-Application-to-Register-Presumed-Death_Form-111.pdf"
+                                        target="_blank"
+                                        matTooltip="Download the form"
+                                        download="Form 11: Application to register presumed death">
+                                        <mat-icon>cloud_download</mat-icon>
+                                        <h4>Form 11</h4>
+                                        <span>Application to register presumed death</span>
+                                        </a>  
+                                </button>
+                            </li>
+
+                            <li>
+                                <button 
+                                    mat-button
+                                    matTooltip="Fill in this form online."
+                                    routerLink="/services-and-forms/deaths-form-12" 
+                                    routerLinkActive="active-route"
+                                    (click)="onGoToTop('services-and-forms')">
+                                        <div class="btn-label">
+                                            <mat-icon class="online">edit</mat-icon>
+                                            <h4>Form 12</h4>
+                                            <span>Notification of Death</span>
+                                        </div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </li>                    
+        
+        <li class="contact-us-li">
+            <button
+                mat-button
+                routerLink="/contact-us" 
+                (click)="onGoToTop()"
+                routerLinkActive="active-route">
+                    Contact Us
+            </button>            
+        </li>  
+        
+        <li class="menu-trigger-li fadeInRight _delay3ms">
+            <button mat-button matTooltip="Open the menu" [matMenuTriggerFor]="menu" >
+                <mat-icon>more_horiz</mat-icon>
+                <!-- <span>...</span> -->
+            </button>
+        </li>        
+    </ul>
+
+</header>
+
+<mat-menu yPosition="below" xPosition="before" #menu="matMenu" class="nira-header-mat-menu">
+    <button 
+        mat-menu-item 
+        class="home-li main-menu-btn"
+        (click)="onGoToTop()"
+        routerLink="/home" 
+        routerLinkActive="active-route">
+        <span>Home</span>
+    </button>
+
+    <button
+        mat-menu-item 
+        (click)="onGoToTop()"
+        class="services-and-forms-li main-menu-btn">
+        <span>Services & Forms</span>
+    </button>
+
+    <button
+        mat-menu-item 
+        (click)="onGoToTop()"
+        class="contact-us-li main-menu-btn"
+        routerLink="/contact-us" 
+        routerLinkActive="active-route">
+        <span>Contact Us</span>
+    </button>
+</mat-menu> 
